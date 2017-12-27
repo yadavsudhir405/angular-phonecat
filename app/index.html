@@ -7,26 +7,24 @@
   </head>
   <body>
     <h3>Hello world!!!</h3>
-    <div class="container">
+    <div class="container" data-ng-controller= "SimpleController">
         Name : <input type= "text"  data-ng-model="name" />
-        <div data-ng-controller="simpleController">
+        <div >
             <ul>
-                <li data-ng-repeat="customer in customers | filter:name | orderBy: 'city':'reverse' ">{{customer.name}} | {{customer.city}}</li>
+                <li data-ng-repeat="customer in customers | filter:name | orderBy: 'city' ">{{customer.name}} | {{customer.city}}</li>
             </ul>
         </div>
     </div>
   <script>
+      demoApp = angular.module('demoApp', []);
       function simpleController($scope){
-          demoApp = angular.module('demoApp');
-          demoApp.controller('simpleController',function ($scope) {
-              $scope.customers = [
+          $scope.customers = [
                   {name:'John Smith',city:'Bangalore'},
                   {name:'John Doe',city:'Delhi'},
                   {name:'Frank',city:'Chennai'}
-              ];
-          });
-
+          ];
       }
+      demoApp.controller('SimpleController',simpleController);
   </script>
   </body>
 </html>
