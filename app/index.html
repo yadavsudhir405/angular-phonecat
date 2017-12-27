@@ -17,13 +17,15 @@
     </div>
   <script>
       demoApp = angular.module('demoApp', []);
-      demoApp.controller('SimpleController', function ($scope) {
+      var controllers = {};
+      controllers.SimpleController = function ($scope) {
           $scope.customers = [
               {name:'John Smith',city:'Bangalore'},
               {name:'John Doe',city:'Delhi'},
               {name:'Frank',city:'Chennai'}
           ];
-      });
+      }
+      demoApp.controller(controllers);
   </script>
   </body>
 </html>
