@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-ng-app="">
+<html lang="en" data-ng-app="demoApp">
   <head>
     <meta charset="utf-8">
     <title>Google Phone Gallery</title>
@@ -17,11 +17,15 @@
     </div>
   <script>
       function simpleController($scope){
-          $scope.customers = [
-              {name:'John Smith',city:'Bangalore'},
-              {name:'John Doe',city:'Delhi'},
-              {name:'Frank',city:'Chennai'}
+          demoApp = angular.module('demoApp');
+          demoApp.controller('simpleController',function ($scope) {
+              $scope.customers = [
+                  {name:'John Smith',city:'Bangalore'},
+                  {name:'John Doe',city:'Delhi'},
+                  {name:'Frank',city:'Chennai'}
               ];
+          });
+
       }
   </script>
   </body>
