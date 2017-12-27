@@ -11,7 +11,7 @@
       Name : <input type= "text"  data-ng-model="name" />
         <div data-ng-init="customers=[{name:'John Smith',city:'Bangalore'},{name:'John Doe',city:'Delhi'},{name:'Frank',city:'Chennai'}]">
             <ul>
-                <li data-ng-repeat="customer in customers | filter:name">{{customer.name}} | {{customer.city}}</li>
+                <li data-ng-repeat="customer in customers | filter:name | orderBy: 'city':'reverse' ">{{customer.name}} | {{customer.city}}</li>
             </ul>
         </div>
     </div>
