@@ -12,12 +12,21 @@
     </div>
   <script>
       var demoApp = angular.module('demoApp', ['ngRoute']);
-      demoApp.controller('SimpleController', function ($scope) {
-          $scope.customers = [
+      
+      demoApp.factory('simpleFactory', function () {
+          var customers = [
               {name:'John Smith',city:'Bangalore'},
               {name:'John Doe',city:'Delhi'},
               {name:'Frank',city:'Chennai'}
           ];
+          var factory = {};
+          factory.getCustomers = function(){
+              return customers;
+          }
+            return factory;
+      });
+      demoApp.controller('SimpleController', function ($scope, simpleFactory) {
+          $scope.customers = simpleFactory.getCustomers();
           $scope.addCustomer = function () {
               $scope.customers.push(
                   {
