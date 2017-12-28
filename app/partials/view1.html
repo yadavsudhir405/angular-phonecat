@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="container">
+    <h2>View 1</h2>
+    Name:
+    <input type="text" data-ng-model="name">
+    </br>
+    <ul>
+        <li data-ng-repeat="customer in customers | filter: name | orderBy:'city' ">{{customer.name}}-{{customer.city}}</li>
+    </ul>
+    </br>
+    Customer Name:
+    <input type="text" data-ng-model="newCustomer.name"/>
+    </br>
+    City:
+    <input type="text" data-ng-model="newCustomer.city"/>
+    </br>
+    <button data-ng-click= "addCustomer()">Add Customer</button>
+    </br>
+    </br>
+    <a href="#/view2">View2</a>
+</div>

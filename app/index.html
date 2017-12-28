@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <title>Google Phone Gallery</title>
       <script src= "bower_components/angular/angular.js" ></script>
+      <script src= "bower_components/angular-route/angular-route.js" ></script>
   </head>
   <body>
     <h3>Hello world!!!</h3>
-    <div data-ng-view= "">
-
+    <div data-ng-view ="">
     </div>
   <script>
-      var demoApp = angular.module('demoApp', []);
-
+      var demoApp = angular.module('demoApp', ['ngRoute']);
       demoApp.controller('SimpleController', function ($scope) {
           $scope.customers = [
               {name:'John Smith',city:'Bangalore'},
